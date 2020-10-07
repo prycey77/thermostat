@@ -2,6 +2,7 @@ $(document).ready(function () {
   var thermostat = new Thermostat();
   updateUsage();
   updateTemperature();
+  checkOutsideTemp();
 
   $("#temperature-up").click(function () {
     thermostat.up();
@@ -27,6 +28,20 @@ $(document).ready(function () {
     updateTemperature();
     updateUsage();
   });
+
+  function checkOutsideTemp() {
+    $("#current-city").change(function () {
+      var city = $("#current-city").val();
+      $.get(
+        "http://api.openweathermap.org/data/2.5/weather?q=" +
+          city +
+          "&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric",
+        function (data) {
+          $("#outsideTemp").text(data.main.temp);
+        }
+      );
+    });
+  }
 
   function updateUsage() {
     $("#energyUsage").text(thermostat.energyUsage());
