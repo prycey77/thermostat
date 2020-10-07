@@ -1,3 +1,10 @@
+body { 
+
+  background-color: blue;
+  padding-left: 10em;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 .low-usage {
   color: green;
 }
