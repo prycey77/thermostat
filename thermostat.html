@@ -11,20 +11,27 @@
       <h1 id="energyUsage" class="energyUsage"></h1>
       <p>
         <section>
+          <div class='fancy-box'>
           <h1>Current temperature:</h1> 
-          <h1 id="outsideTemp"></h1>
+          <h1 id="outsideTemp"></h1></div>
           <select id="current-city">
             <option value="london">London</option>
             <option value="paris">Paris</option>
             <option value="tokyo">Tokyo</option>
           </select>
         </section>
-
+        <div class='fancier-box'>
         <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
         <button id="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-toggle">PSMToggle</button>
+        power saving mode is <span id="power-saving-status">on</span></div>
+
+        <label class="switch">
+          <input type="checkbox" id="powersaving-toggle">
+          <span class="slider round"></span>
+        </label>
+        <!-- <button id="powersaving-toggle">PSMToggle</button> -->
+      
       </p>
     </section>
     <script src="src/thermostat.js"></script>
